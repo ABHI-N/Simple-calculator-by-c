@@ -1,0 +1,53 @@
+
+#include<stdio.h>
+
+int add(int a,int b);
+
+int subtract(int a ,int b);
+
+int multiply(int a ,int b);
+
+int divide(int a,int b);
+
+int main(){
+int (*cal[4])(int , int);
+cal[0] = add;
+cal[1] = subtract;
+cal[2] = multiply;
+cal[3] = divide;
+
+int a;
+int s;
+printf("enter two number ");
+
+
+scanf("%d %d",&a,&s);
+printf("enter 0 to add 1 to subtract 2 to multiply and 3 to divide ");
+int c;
+scanf("%d",&c);
+
+printf("%d",cal[c](a,s));
+
+
+
+}
+
+
+int add(int a,int b)
+{
+   return(a+b);
+}
+int subtract(int a ,int b)
+{
+  return(a-b);
+}
+int multiply(int a ,int b)
+{
+   return(a*b);
+}
+int divide(int a,int b)
+{
+    if (b != 0){
+    return(a/b);}
+}
+
